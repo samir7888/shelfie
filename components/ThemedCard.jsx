@@ -1,9 +1,9 @@
 import { View, useColorScheme } from 'react-native'
-import { colours } from '../constants/Colors';
+import { Colors } from '../constants/Colors';
 
 const ThemedCard = ({style, ...props}) => {
      const colorScheme = useColorScheme();
-        const theme = colours[colorScheme] || colours.light;
+        const theme = Colors[colorScheme] || Colors.light;
   return (
     <View style={[{backgroundColor: theme.uiBackground}, style, styles.card ]}  {...props} />
   )

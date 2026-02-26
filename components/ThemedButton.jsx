@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { colours } from '../constants/Colors'
+import { Colors } from '../constants/Colors'
 
 const ThemedButton = ({style, ...props}) => {
   return (
@@ -11,7 +11,7 @@ export default ThemedButton
 
 const styles = StyleSheet.create({
      btn: {
-        backgroundColor: colours.primary,
+        backgroundColor: Colors.primary,
         width: 'fit-content',
         alignSelf: 'center',
         padding: 10,

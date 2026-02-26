@@ -3,7 +3,7 @@ import { Link } from 'expo-router'
 import ThemedView from '../../components/ThemedView'
 import Spacer from '../../components/Spacer'
 import ThemedText from '../../components/ThemedText'
-import { colours } from '../../constants/Colors'
+import { Colors } from '../../constants/Colors'
 import ThemedButton from '../../components/ThemedButton'
 export default function Login() {
   const handleSubmit = () => {
@@ -21,6 +21,10 @@ export default function Login() {
       <Spacer height={100} /> 
       <Link href={'/register'}>
       <ThemedText style={{ textAlign: 'center'}}>Don't have an account? Register</ThemedText>
+      </Link>
+      <Spacer height={20} />
+      <Link href={'/profile'}>
+      <ThemedText style={{ textAlign: 'center'}}>Profile</ThemedText>
       </Link>
     </ThemedView>
   )
