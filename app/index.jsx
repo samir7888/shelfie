@@ -19,13 +19,9 @@ const Home = () => {
         <ThemedText style={{fontStyle: 'italic'}} >Wishlist Done!</ThemedText>
       </ThemedCard>
 
-      <Link href="/about" style={styles.link} >
-      <ThemedText>
-        
-        Go to about
-        </ThemedText>
-      </Link>
-      <Link href="/contact" style={styles.link} ><ThemedText>Go to Contact</ThemedText></Link>
+      
+      <Link href="/login" style={styles.link} >
+      <ThemedText>Go to Login Page</ThemedText></Link>
     </ThemedView>
   )
 }

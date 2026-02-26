@@ -15,9 +15,8 @@ const LayoutComponent = () => {
                 headerTintColor: theme.title,
             }
         }>
+            <Stack.Screen name="(auth)" options={{headerShown: false}} />
             <Stack.Screen name="index" options={{headerTitle: 'Home'}} />
-            <Stack.Screen name="about" options={{headerTitle: 'About'}} />
-            <Stack.Screen name="contact" options={{headerTitle: 'Contact'}} />  
         </Stack>
             </>
   )
