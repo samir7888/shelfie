@@ -27,7 +27,7 @@ const DashboardLayout = () => {
     )}} />
     <Tabs.Screen name="books" options={{ title: "Books", 
         tabBarIcon : ({focused}) => (
-              <Ionicons 
+              <Ionicons   
               name={focused ? 'book' : 'book-outline'}
               size={24} 
               color={focused ? theme.iconColourFocused : theme.iconColour } />

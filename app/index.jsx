@@ -8,7 +8,7 @@ import ThemedCard from '../components/ThemedCard';
 
 const Home = () => {
   return (
-    <ThemedView style={[styles.container]} >
+    <ThemedView style={[styles.container]} safe={true}>
      <ThemedImage  />
       <Spacer />
       <ThemedText style={[styles.title ]}>Home</ThemedText>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
     },
     title:{
         fontSize: 28,
