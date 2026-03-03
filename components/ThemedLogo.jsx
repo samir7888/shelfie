@@ -3,7 +3,7 @@ import { useColorScheme } from 'react-native';
 import DarkLogo from '../assets/img/logo_dark.png';
 import LightLogo from '../assets/img/logo_light.png';
 import { Image } from 'react-native';
-const ThemedImage = ({...props}) => {
+const ThemedLogo = ({...props}) => {
     const colorScheme = useColorScheme();
     const img = colorScheme === 'dark' ? DarkLogo : LightLogo;
   return (
@@ -11,4 +11,4 @@ const ThemedImage = ({...props}) => {
   )
 }
 
-export default ThemedImage
+export default ThemedLogo

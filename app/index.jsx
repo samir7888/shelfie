@@ -1,52 +1,56 @@
-import { View, Text, StyleSheet } from 'react-native'
-import { Link } from 'expo-router';
-import ThemedImage from '../components/ThemedImage';
-import ThemedView from '../components/ThemedView';
-import Spacer from '../components/Spacer';
-import ThemedText from '../components/ThemedText';
-import ThemedCard from '../components/ThemedCard';
+import { StyleSheet } from 'react-native'
+import { Link } from 'expo-router'
+
+import ThemedView from "../components/ThemedView"
+import ThemedText from "../components/ThemedText"
+import ThemedLogo from "../components/ThemedLogo"
+import Spacer from "../components/Spacer"
 
 const Home = () => {
   return (
-    <ThemedView style={[styles.container]} safe={true}>
-     <ThemedImage  />
+    <ThemedView style={styles.container}>
+      <ThemedLogo style={styles.img} width={100} height={100} />
       <Spacer />
-      <ThemedText style={[styles.title ]}>Home</ThemedText>
-      <Spacer height={10} />
-      <ThemedText style={{fontStyle: 'italic'}} >Reading List Done!</ThemedText>
-      <Spacer />
-      <ThemedCard style={styles.card}>
-        <ThemedText style={{fontStyle: 'italic'}} >Wishlist Done!</ThemedText>
-      </ThemedCard>
 
-      
-      <Link href="/login" style={styles.link} >
-      <ThemedText>Go to Login Page</ThemedText></Link>
-      <Link href="/profile" style={styles.link} >
-      <ThemedText>Go to Profile Page</ThemedText></Link>
+      <ThemedText style={styles.title} title={true}>The Number 1</ThemedText>
+
+      <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
+        Reading List App
+      </ThemedText>
+
+      <Link href="/login" style={styles.link}>
+        <ThemedText>Login</ThemedText>
+      </Link>
+
+      <Link href="/register" style={styles.link}>
+        <ThemedText>Register</ThemedText>
+      </Link>
+
+      <Link href="/profile" style={styles.link}>
+        <ThemedText>Profile</ThemedText>
+      </Link>
+
     </ThemedView>
   )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        // justifyContent: 'center',
-    },
-    title:{
-        fontSize: 28,
-        fontWeight: 'bold',
-        marginBottom: 10,
-    },
-    card: {
-        boxShadow: '4px 3px rgba(20, 9, 235, 0.1)',
-    },
-    link: {
-        borderBottomWidth: 2,
-        color: 'blue',
-        marginVertical: 20,
-    }
-});
-
 export default Home
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  img: {
+    marginVertical: 20
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1
+  },
+})
