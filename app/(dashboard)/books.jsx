@@ -1,16 +1,15 @@
-import { StyleSheet } from 'react-native'
+import { FlatList, Pressable, StyleSheet } from 'react-native'
 
 import Spacer from "../../components/Spacer"
 import ThemedText from "../../components/ThemedText"
 import ThemedView from "../../components/ThemedView"
 import { useBooks } from "../../contexts/BooksContext"
-import { useEffect } from 'react'
+import ThemedCard from '../../components/ThemedCard'
+import { Colors } from '../../constants/Colors'
 
 const Books = () => {
-  const { books, fetchBooks } = useBooks();
-  useEffect(() => {
-    fetchBooks();
-  }, []);
+  const { books } = useBooks();
+
   return (
     <ThemedView style={styles.container} safe={true}>
 
@@ -19,24 +18,51 @@ const Books = () => {
         Your Reading List
       </ThemedText>
       <Spacer />
-      {books.map((book) => (
-        <ThemedText key={book.$id}>{book.title}</ThemedText>
-      ))}
+
+      <FlatList
+        data={books}
+        keyExtractor={(item) => item.$id}
+        contentContainerStyle={styles.list}
+        renderItem={({ item }) => (
+          <Pressable>
+            <ThemedCard style={styles.card}>
+              <ThemedText style={styles.title}>{item.title}</ThemedText>
+              <ThemedText>Written by {item.author}</ThemedText>
+            </ThemedCard>
+          </Pressable>
+        )}
+      />
+
     </ThemedView>
   )
 }
 
 export default Books
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "stretch",
-
   },
   heading: {
     fontWeight: "bold",
     fontSize: 18,
     textAlign: "center",
+  },
+  list: {
+    marginTop: 40
+  },
+  card: {
+    width: "90%",
+    marginHorizontal: "5%",
+    marginVertical: 10,
+    padding: 10,
+    paddingLeft: 14,
+    borderLeftColor: Colors.primary,
+    borderLeftWidth: 4
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 10,
   },
 })
