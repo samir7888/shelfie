@@ -96,6 +96,9 @@ export const BooksProvider = ({ children }) => {
                 if (events[0].includes('create')) {
                     setBooks((prevBooks) => [...prevBooks, payload])
                 }
+                if (events[0].includes('delete')) {
+                    setBooks((prevBooks) => prevBooks.filter(b => b.$id !== payload.$id));
+                }
             })
         } else {
             setBooks([]);
